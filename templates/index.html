@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Calculator</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+            overflow:hidden;
+        }
+
+        .container{
+            width:400px;
+            padding:30px;
+            border-radius:25px;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(15px);
+            box-shadow:0 0 30px rgba(0,255,255,0.25);
+            text-align:center;
+            color:white;
+        }
+
+        h1{
+            margin-bottom:20px;
+            color:#00ffff;
+            text-shadow:0 0 10px #00ffff;
+        }
+
+        .subtitle{
+            color:#9ca3af;
+            margin-bottom:25px;
+            font-size:14px;
+        }
+
+        input,select{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:none;
+            outline:none;
+            border-radius:12px;
+            background:rgba(255,255,255,0.08);
+            color:white;
+            font-size:16px;
+        }
+
+        select option{
+            color:black;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            margin-top:15px;
+            border:none;
+            border-radius:12px;
+            background:#00ffff;
+            color:black;
+            font-weight:bold;
+            font-size:16px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            transform:scale(1.05);
+            box-shadow:0 0 20px #00ffff;
+        }
+
+        .result{
+            margin-top:25px;
+            padding:15px;
+            border-radius:12px;
+            background:rgba(0,255,255,0.08);
+            border:1px solid rgba(0,255,255,0.3);
+        }
+
+        .result h2{
+            color:#00ffff;
+        }
+
+        .ai-badge{
+            display:inline-block;
+            margin-bottom:15px;
+            padding:6px 15px;
+            border-radius:20px;
+            background:rgba(0,255,255,0.1);
+            color:#00ffff;
+            font-size:13px;
+            border:1px solid rgba(0,255,255,0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="ai-badge">
+        🤖 AI Powered Calculator
+    </div>
+
+    <h1>CALCULATOR</h1>
+
+    <p class="subtitle">
+        Flask + Python Internship Project
+    </p>
+
+    <form method="POST">
+
+        <input
+            type="number"
+            step="any"
+            name="num1"
+            placeholder="Enter First Number"
+            required
+        >
+
+        <select name="operation">
+            <option value="+">Addition (+)</option>
+            <option value="-">Subtraction (-)</option>
+            <option value="*">Multiplication (×)</option>
+            <option value="/">Division (÷)</option>
+        </select>
+
+        <input
+            type="number"
+            step="any"
+            name="num2"
+            placeholder="Enter Second Number"
+            required
+        >
+
+        <button type="submit">
+            Calculate
+        </button>
+
+    </form>
+
+    <div class="result">
+        <h2>Result</h2>
+        <h3>{{ result }}</h3>
+    </div>
+
+</div>
+
+</body>
+</html>
